@@ -2,7 +2,6 @@
 
 Welcome to the **Puzzle Game**, a fun and challenging sliding puzzle game built using **React** and styled with **Tailwind CSS**! Test your brain and rearrange the tiles in the correct order to win the game.
 
-![Puzzle Game Screenshot](https://via.placeholder.com/800x400) <!-- You can replace this with a real screenshot later -->
 
 ## 🚀 Features
 - **Randomized puzzle tiles** every time you start the game.
