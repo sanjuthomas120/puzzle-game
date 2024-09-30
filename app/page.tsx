@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 const PuzzleGame: React.FC = () => {
   const [tiles, setTiles] = useState<number[]>([]);
   const [emptyTileIndex, setEmptyTileIndex] = useState<number | null>(null);
+  const [moves, setMoves] = useState<number>(0);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
     initGame();
@@ -14,6 +16,8 @@ const PuzzleGame: React.FC = () => {
     initialTiles = shuffleTiles(initialTiles);
     setTiles(initialTiles);
     setEmptyTileIndex(initialTiles.indexOf(null));
+    setMoves(0);
+    setIsModalOpen(false);
   };
 
   const shuffleTiles = (array: (number | null)[]) => {
@@ -42,6 +46,7 @@ const PuzzleGame: React.FC = () => {
       ];
       setTiles(newTiles);
       setEmptyTileIndex(index);
+      setMoves((prev) => prev + 1);
     }
   };
 
@@ -50,14 +55,20 @@ const PuzzleGame: React.FC = () => {
     return JSON.stringify(tiles) === JSON.stringify(correctTiles);
   };
 
+  useEffect(() => {
+    if (checkPuzzleSolved()) {
+      setIsModalOpen(true);
+    }
+  });
+
   return (
-    <div className="flex flex-col items-center mt-10">
-      <h1 className="text-3xl font-bold mb-6">Puzzle Game</h1>
-      <div className="grid grid-cols-4 grid-rows-4 gap-2">
+    <div className="relative flex flex-col h-screen items-center w-auto">
+      <h1 className="text-2xl font-bold mb-16 mt-6 ">Puzzle Game</h1>
+      <div className="grid grid-cols-4 grid-rows-4 gap-2 mt-16">
         {tiles.map((tile, index) => (
           <div
             key={index}
-            className={`flex justify-center items-center w-24 h-24 text-xl font-bold rounded-lg 
+            className={`flex justify-center items-center w-16 h-16 text-xl font-bold rounded-lg 
               ${
                 tile === null
                   ? "bg-gray-200 cursor-not-allowed"
@@ -69,17 +80,28 @@ const PuzzleGame: React.FC = () => {
           </div>
         ))}
       </div>
-      {checkPuzzleSolved() && (
-        <p className="text-green-600 text-lg font-semibold mt-4">
-          Puzzle Solved!
-        </p>
-      )}
       <button
         onClick={initGame}
-        className="mt-6 px-4 py-2 bg-white text-black font-semibold rounded hover:bg-black hover:text-white"
+        className="mt-10 px-4 py-2 bg-white text-black font-semibold rounded hover:bg-black hover:text-white"
       >
         Reset
       </button>
+         {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+            <h2 className="text-2xl font-bold mb-4">Congratulations!</h2>
+            <p className="text-lg mb-6">
+              You completed the puzzle in {moves} moves!
+            </p>
+            <button
+              onClick={initGame}
+              className="px-4 py-2 bg-black text-white rounded hover:bg-white hover:text-black"
+            >
+              Play Again
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
