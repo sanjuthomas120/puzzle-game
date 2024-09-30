@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Puzzle Game
 
-## Getting Started
+This is a simple sliding puzzle game built with **React** and **Tailwind CSS**. The objective of the game is to rearrange the shuffled tiles back into their correct order.
 
-First, run the development server:
+## Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+You can play the game online [here](#).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Shuffled Puzzle**: The game starts with tiles in random order.
+- **Tile Movement**: Move tiles by clicking on them if they are adjacent to the empty space.
+- **Solved State Detection**: The game detects when the puzzle is solved and displays a congratulatory message.
+- **Reset Button**: Reset the game to shuffle the tiles again.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used
 
-## Learn More
+- **React**: A JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **TypeScript**: Optional static typing for JavaScript.
+  
+## Screenshots
 
-To learn more about Next.js, take a look at the following resources:
+![Puzzle Game Screenshot](#) <!-- Add screenshot link here -->
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How to Run Locally
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Follow the steps below to get the project up and running locally.
 
-## Deploy on Vercel
+### Prerequisites
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Node.js](https://nodejs.org/) (v14+)
+- [npm](https://www.npmjs.com/) (or [yarn](https://yarnpkg.com/))
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/your-username/puzzle-game.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd puzzle-game
+    ```
+
+3. Install the dependencies:
+
+    ```bash
+    npm install
+    ```
+
+4. Start the development server:
+
+    ```bash
+    npm run dev
+    ```
+
+5. Open the browser and navigate to `http://localhost:3000` to view the game.
+
+## Usage
+
+- Click on the tiles adjacent to the empty space to move them.
+- Rearrange all the tiles in the correct order (1 to 15) to win the game.
+- Click "Reset" to shuffle the puzzle again.
+
+## Project Structure
+
