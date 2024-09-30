@@ -50,5 +50,3 @@ Welcome to the **Puzzle Game**, a fun and challenging sliding puzzle game built 
 ## 🤝 Contributions
 Contributions are welcome! Feel free to fork the repository and create a pull request with any improvements or bug fixes.
 
-## 📜 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
