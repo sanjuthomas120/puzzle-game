@@ -45,7 +45,7 @@ Welcome to the **Puzzle Game**, a fun and challenging sliding puzzle game built 
 
 ## 🖼️ Game Preview
 
-![Game Preview](https://via.placeholder.com/400x300) <!-- Replace with actual preview later -->
+![Game Preview](https://github.com/sanjuthomas120/puzzle-game/blob/main/Screenshot.png?raw=true)
 
 ## 🤝 Contributions
 Contributions are welcome! Feel free to fork the repository and create a pull request with any improvements or bug fixes.
